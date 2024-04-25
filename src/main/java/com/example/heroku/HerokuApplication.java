@@ -85,9 +85,21 @@ public class HerokuApplication {
     }
   }
 
-  String getRandomString() {
-    Integer val = (Integer)Math.random();
-    return val.substring(2, 15);
+  // Method to generate a random string with predefined length
+  public static String getRandomString() {
+    // Define the characters that the string can be composed of
+    String characterSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    StringBuilder result = new StringBuilder();
+    Random random = new Random();
+    int length = 10;  // Predefined length of the random string
+
+    // Generate a random string of the predefined length
+    for (int i = 0; i < length; i++) {
+        int index = random.nextInt(characterSet.length());
+        result.append(characterSet.charAt(index));
+    }
+
+    return result.toString();
   }
 
 }
