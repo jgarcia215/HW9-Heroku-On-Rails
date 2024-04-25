@@ -85,8 +85,9 @@ public class HerokuApplication {
     }
   }
 
-  String getRandomString() {
-    return Math.random().toString(36).substring(2, 15);
+  getRandomString() {
+    Double val = Math.random();
+    return val.substring(2, 15);
   }
 
 }
